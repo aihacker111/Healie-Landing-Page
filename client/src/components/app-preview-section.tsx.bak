@@ -1,0 +1,316 @@
+import { Container } from "@/components/ui/container";
+import { motion } from "framer-motion";
+
+interface AppScreenshotProps {
+  src: string;
+  alt: string;
+  label: string;
+  description?: string;
+  delay: number;
+}
+
+const AppScreenshot = ({ src, alt, label, description, delay }: AppScreenshotProps) => {
+  return (
+    <motion.div
+      className="flex-shrink-0 w-64 md:w-80 snap-center"
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay: delay * 0.1 }}
+      viewport={{ once: true }}
+    >
+      <motion.div 
+        className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+        whileHover={{ 
+          rotateY: 10,
+          transition: { duration: 0.5 }
+        }}
+      >
+        <svg viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Phone frame */}
+          <rect width="390" height="844" rx="40" fill="#1E293B" />
+          <rect x="6" y="6" width="378" height="832" rx="36" fill="#F8FAFC" />
+          
+          {/* Status bar */}
+          <rect x="6" y="6" width="378" height="40" rx="36" fill="#F1F5F9" />
+          <circle cx="40" cy="26" r="6" fill="#3B82F6" />
+          <rect x="180" y="23" width="30" height="6" rx="3" fill="#64748B" />
+          <rect x="340" y="23" width="30" height="6" rx="3" fill="#64748B" />
+          
+          {/* Content specific to each screen */}
+          {alt === "Dashboard" && (
+            <>
+              <rect x="20" y="60" width="348" height="64" rx="16" fill="#EFF6FF" />
+              <circle cx="52" cy="92" r="16" fill="#3B82F6" />
+              <rect x="84" y="84" width="120" height="8" rx="4" fill="#3B82F6" />
+              <rect x="84" y="100" width="80" height="8" rx="4" fill="#64748B" />
+              
+              <rect x="20" y="140" width="165" height="220" rx="16" fill="#DBEAFE" />
+              <rect x="35" y="160" width="100" height="8" rx="4" fill="#1E293B" />
+              <rect x="35" y="176" width="60" height="8" rx="4" fill="#64748B" />
+              <circle cx="95" cy="240" r="50" stroke="#3B82F6" strokeWidth="10" />
+              <path d="M95 190V240L130 260" stroke="#3B82F6" strokeWidth="6" strokeLinecap="round" />
+              <rect x="35" y="300" width="120" height="40" rx="8" fill="#3B82F6" />
+              <rect x="75" y="316" width="40" height="8" rx="4" fill="white" />
+              
+              <rect x="203" y="140" width="165" height="220" rx="16" fill="#F0FDF4" />
+              <rect x="218" y="160" width="100" height="8" rx="4" fill="#1E293B" />
+              <rect x="218" y="176" width="60" height="8" rx="4" fill="#64748B" />
+              <circle cx="278" cy="240" r="50" fill="#DCFCE7" />
+              <path d="M258 240L268 250L298 220" stroke="#10B981" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+              <rect x="218" y="300" width="120" height="40" rx="8" fill="#10B981" />
+              <rect x="258" y="316" width="40" height="8" rx="4" fill="white" />
+              
+              <rect x="20" y="380" width="348" height="120" rx="16" fill="white" stroke="#E2E8F0" />
+              <rect x="35" y="400" width="150" height="8" rx="4" fill="#1E293B" />
+              <rect x="35" y="416" width="240" height="8" rx="4" fill="#64748B" />
+              <rect x="35" y="432" width="240" height="8" rx="4" fill="#64748B" />
+              <rect x="35" y="448" width="120" height="8" rx="4" fill="#64748B" />
+              <rect x="35" y="472" width="80" height="16" rx="8" fill="#EFF6FF" />
+              <rect x="45" y="476" width="60" height="8" rx="4" fill="#3B82F6" />
+              
+              <rect x="20" y="520" width="348" height="120" rx="16" fill="white" stroke="#E2E8F0" />
+              <rect x="35" y="540" width="150" height="8" rx="4" fill="#1E293B" />
+              <circle cx="52" cy="580" r="16" fill="#FEF2F2" />
+              <path d="M52 574V586" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="52" cy="570" r="1" fill="#EF4444" />
+              <rect x="80" y="572" width="240" height="8" rx="4" fill="#64748B" />
+              <rect x="80" y="588" width="180" height="8" rx="4" fill="#64748B" />
+            </>
+          )}
+          
+          {alt === "Chat Interface" && (
+            <>
+              <rect x="20" y="60" width="348" height="50" rx="16" fill="#4FD1C5" />
+              <circle cx="45" cy="85" r="16" fill="white" />
+              <rect x="70" y="77" width="80" height="8" rx="4" fill="white" />
+              <rect x="70" y="93" width="50" height="6" rx="3" fill="#E6FFFA" />
+              <circle cx="330" cy="85" r="12" fill="#E6FFFA" />
+              <path d="M330 81V89" stroke="white" strokeWidth="2" strokeLinecap="round" />
+              <path d="M326 85H334" stroke="white" strokeWidth="2" strokeLinecap="round" />
+              
+              <rect x="20" y="130" width="240" height="60" rx="16" fill="#F1F5F9" />
+              <rect x="40" y="150" width="200" height="8" rx="4" fill="#64748B" />
+              <rect x="40" y="166" width="160" height="8" rx="4" fill="#64748B" />
+              
+              <rect x="128" y="210" width="240" height="60" rx="16" fill="#DBEAFE" />
+              <rect x="148" y="230" width="200" height="8" rx="4" fill="#3B82F6" />
+              <rect x="148" y="246" width="160" height="8" rx="4" fill="#60A5FA" />
+              
+              <rect x="20" y="290" width="240" height="80" rx="16" fill="#F1F5F9" />
+              <rect x="40" y="310" width="200" height="8" rx="4" fill="#64748B" />
+              <rect x="40" y="326" width="200" height="8" rx="4" fill="#64748B" />
+              <rect x="40" y="342" width="160" height="8" rx="4" fill="#64748B" />
+              
+              <rect x="128" y="390" width="240" height="60" rx="16" fill="#DBEAFE" />
+              <rect x="148" y="410" width="200" height="8" rx="4" fill="#3B82F6" />
+              <rect x="148" y="426" width="160" height="8" rx="4" fill="#60A5FA" />
+              
+              <rect x="20" y="470" width="240" height="60" rx="16" fill="#F1F5F9" />
+              <rect x="40" y="490" width="200" height="8" rx="4" fill="#64748B" />
+              <rect x="40" y="506" width="160" height="8" rx="4" fill="#64748B" />
+              
+              <rect x="20" y="780" width="348" height="50" rx="16" fill="#F8FAFC" stroke="#E2E8F0" />
+              <rect x="40" y="800" width="240" height="10" rx="5" fill="#F1F5F9" />
+              <circle cx="330" cy="805" r="16" fill="#3B82F6" />
+              <path d="M320 805L330 815L340 805" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </>
+          )}
+          
+          {alt === "Health Tracking" && (
+            <>
+              <rect x="20" y="60" width="348" height="60" rx="16" fill="#4FD1C5" />
+              <rect x="40" y="80" width="150" height="8" rx="4" fill="white" />
+              <rect x="40" y="96" width="100" height="6" rx="3" fill="#E6FFFA" />
+              
+              <rect x="20" y="140" width="348" height="180" rx="16" fill="white" stroke="#E2E8F0" />
+              <rect x="40" y="160" width="150" height="8" rx="4" fill="#1E293B" />
+              <rect x="40" y="176" width="100" height="6" rx="3" fill="#64748B" />
+              
+              <rect x="40" y="200" width="308" height="100" rx="8" fill="#F8FAFC" />
+              <path d="M40 230H348" stroke="#E2E8F0" />
+              <path d="M40 260H348" stroke="#E2E8F0" />
+              <path d="M40 290H348" stroke="#E2E8F0" />
+              <path d="M80 290L80 200" stroke="#E2E8F0" />
+              <path d="M150 290L150 200" stroke="#E2E8F0" />
+              <path d="M220 290L220 200" stroke="#E2E8F0" />
+              <path d="M290 290L290 200" stroke="#E2E8F0" />
+              
+              <path d="M80 250L150 230L220 260L290 210" stroke="#3B82F6" strokeWidth="3" />
+              <circle cx="80" cy="250" r="4" fill="#3B82F6" />
+              <circle cx="150" cy="230" r="4" fill="#3B82F6" />
+              <circle cx="220" cy="260" r="4" fill="#3B82F6" />
+              <circle cx="290" cy="210" r="4" fill="#3B82F6" />
+              
+              <rect x="20" y="340" width="165" height="140" rx="16" fill="white" stroke="#E2E8F0" />
+              <rect x="40" y="360" width="80" height="8" rx="4" fill="#1E293B" />
+              <circle cx="100" cy="420" r="40" fill="#F8FAFC" stroke="#3B82F6" strokeWidth="8" strokeDasharray="1 1" />
+              <path d="M85 420L100 435L115 420" stroke="#3B82F6" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+              <rect x="70" y="460" width="60" height="6" rx="3" fill="#64748B" />
+              
+              <rect x="203" y="340" width="165" height="140" rx="16" fill="white" stroke="#E2E8F0" />
+              <rect x="223" y="360" width="80" height="8" rx="4" fill="#1E293B" />
+              <rect x="223" y="390" width="125" height="16" rx="8" fill="#DBEAFE" />
+              <rect x="223" y="416" width="125" height="16" rx="8" fill="#BFDBFE" />
+              <rect x="223" y="442" width="125" height="16" rx="8" fill="#93C5FD" />
+              <rect x="223" y="468" width="40" height="6" rx="3" fill="#64748B" />
+              <rect x="283" y="468" width="40" height="6" rx="3" fill="#64748B" />
+              <rect x="343" y="468" width="5" height="6" rx="2.5" fill="#64748B" />
+            </>
+          )}
+          
+          {alt === "Medication Reminders" && (
+            <>
+              <rect x="20" y="60" width="348" height="60" rx="16" fill="#4FD1C5" />
+              <rect x="40" y="80" width="200" height="8" rx="4" fill="white" />
+              <rect x="40" y="96" width="120" height="6" rx="3" fill="#E6FFFA" />
+              
+              <rect x="20" y="140" width="348" height="80" rx="16" fill="#FEF2F2" />
+              <circle cx="52" cy="180" r="20" fill="#FEE2E2" />
+              <circle cx="52" cy="180" r="10" fill="#EF4444" />
+              <rect x="84" y="164" width="120" height="8" rx="4" fill="#1E293B" />
+              <rect x="84" y="180" width="180" height="6" rx="3" fill="#64748B" />
+              <rect x="84" y="196" width="180" height="6" rx="3" fill="#64748B" />
+              <rect x="296" y="166" width="48" height="28" rx="14" fill="#EF4444" />
+              <rect x="303" y="177" width="34" height="6" rx="3" fill="white" />
+              
+              <rect x="20" y="240" width="348" height="80" rx="16" fill="#F0FDF4" />
+              <circle cx="52" cy="280" r="20" fill="#DCFCE7" />
+              <path d="M45 280L50 285L60 275" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <rect x="84" y="264" width="120" height="8" rx="4" fill="#1E293B" />
+              <rect x="84" y="280" width="180" height="6" rx="3" fill="#64748B" />
+              <rect x="84" y="296" width="180" height="6" rx="3" fill="#64748B" />
+              <rect x="296" y="266" width="48" height="28" rx="14" fill="#10B981" />
+              <rect x="303" y="277" width="34" height="6" rx="3" fill="white" />
+              
+              <rect x="20" y="340" width="348" height="80" rx="16" fill="#FFFBEB" />
+              <circle cx="52" cy="380" r="20" fill="#FEF3C7" />
+              <path d="M52 372V388" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="52" cy="370" r="2" fill="#F59E0B" />
+              <rect x="84" y="364" width="120" height="8" rx="4" fill="#1E293B" />
+              <rect x="84" y="380" width="180" height="6" rx="3" fill="#64748B" />
+              <rect x="84" y="396" width="180" height="6" rx="3" fill="#64748B" />
+              <rect x="296" y="366" width="48" height="28" rx="14" fill="#F59E0B" />
+              <rect x="303" y="377" width="34" height="6" rx="3" fill="white" />
+              
+              <rect x="20" y="440" width="348" height="160" rx="16" fill="white" stroke="#E2E8F0" />
+              <rect x="40" y="460" width="150" height="8" rx="4" fill="#1E293B" />
+              
+              <rect x="40" y="490" width="140" height="40" rx="8" fill="#F1F5F9" />
+              <rect x="60" y="506" width="100" height="8" rx="4" fill="#64748B" />
+              
+              <rect x="200" y="490" width="140" height="40" rx="8" fill="#F1F5F9" />
+              <rect x="220" y="506" width="100" height="8" rx="4" fill="#64748B" />
+              
+              <rect x="40" y="540" width="140" height="40" rx="8" fill="#F1F5F9" />
+              <rect x="60" y="556" width="100" height="8" rx="4" fill="#64748B" />
+              
+              <rect x="200" y="540" width="140" height="40" rx="8" fill="#F1F5F9" />
+              <rect x="220" y="556" width="100" height="8" rx="4" fill="#64748B" />
+              
+              <rect x="20" y="780" width="348" height="50" rx="16" fill="#4FD1C5" />
+              <rect x="130" y="802" width="128" height="8" rx="4" fill="white" />
+            </>
+          )}
+        </svg>
+      </motion.div>
+      <p className="text-center mt-4 text-neutral-700 font-medium">{label}</p>
+      {description && (
+        <p className="text-center mt-2 text-sm text-neutral-600 px-2">{description}</p>
+      )}
+    </motion.div>
+  );
+};
+
+export default function AppPreviewSection() {
+  const screenshots = [
+    {
+      alt: "Dashboard",
+      label: "Personalized Dashboard",
+      description: "Your health at a glance: view vitals, upcoming appointments, medication schedules, and health goals all in one beautifully designed interface.",
+      delay: 0
+    },
+    {
+      alt: "Chat Interface",
+      label: "Intuitive Chat Experience",
+      description: "Communicate naturally with healie's AI through a familiar chat interface that understands your questions and provides clear, medically-informed responses.",
+      delay: 1
+    },
+    {
+      alt: "Health Tracking",
+      label: "Comprehensive Health Tracking",
+      description: "Monitor your vital signs, sleep patterns, activity levels, and more with visual analytics that help you understand trends and improvements over time.",
+      delay: 2
+    },
+    {
+      alt: "Medication Reminders",
+      label: "Smart Medication Management",
+      description: "Never miss a dose with healie's intelligent reminder system that adapts to your schedule and tracks medication effectiveness and potential interactions.",
+      delay: 3
+    }
+  ];
+
+  return (
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
+      <Container>
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-blue-500/10 to-teal-500/20 rounded-full mb-4">
+            <svg className="w-4 h-4 mr-1.5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.59 7.41L7 6L13 12L7 18L5.59 16.59L10.17 12L5.59 7.41Z" fill="currentColor"/>
+              <path d="M11.59 7.41L13 6L19 12L13 18L11.59 16.59L16.17 12L11.59 7.41Z" fill="currentColor"/>
+            </svg>
+            <span className="text-sm font-semibold text-primary">Powered by VinAI</span>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4"><span className="text-primary">healie</span> in Action</h2>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Take a look at our beautiful interface designed for both iOS and Android devices with a focus on simplicity and accessibility.
+          </p>
+        </motion.div>
+        
+        <div className="relative">
+          {/* iPhone frame overlay */}
+          <div className="absolute inset-0 pointer-events-none flex justify-center items-center opacity-10">
+            <svg width="300" height="600" viewBox="0 0 300 600" className="text-neutral-400">
+              <rect x="10" y="0" width="280" height="600" rx="45" stroke="currentColor" strokeWidth="2" fill="none" />
+              <path d="M110 20H190" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+              <circle cx="150" cy="550" r="20" stroke="currentColor" strokeWidth="2" fill="none" />
+            </svg>
+          </div>
+          
+          <div className="flex overflow-x-auto pb-12 -mx-4 px-4 space-x-12 snap-x">
+            {screenshots.map((screenshot, index) => (
+              <AppScreenshot
+                key={index}
+                src=""
+                alt={screenshot.alt}
+                label={screenshot.label}
+                description={screenshot.description}
+                delay={screenshot.delay}
+              />
+            ))}
+          </div>
+          
+          {/* Visual indicator for scrolling */}
+          <motion.div 
+            className="flex justify-center items-center mt-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0.3, 0.9, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <svg width="80" height="24" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40 4L49.7942 20H30.2058L40 4Z" fill="#4FD1C5" />
+              <path d="M62 10L67.7942 20H56.2058L62 10Z" fill="#4FD1C5" opacity="0.6" />
+              <path d="M18 10L23.7942 20H12.2058L18 10Z" fill="#4FD1C5" opacity="0.6" />
+            </svg>
+          </motion.div>
+        </div>
+      </Container>
+    </section>
+  );
+}
