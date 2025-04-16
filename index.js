@@ -43,8 +43,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 var __dirname = path.dirname(fileURLToPath(import.meta.url));
 var vite_config_default = defineConfig({
-  base: "/Healie-Landing-Page/",
-  // Set this to your repository name
+  // base: "/Healie-Landing-Page/", // Set this to your repository name
   plugins: [react()],
   resolve: {
     alias: {
